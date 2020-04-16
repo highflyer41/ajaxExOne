@@ -53,9 +53,9 @@ $('#posts10').click(()=>{
  $('#createPost').click(()=>{
     $.post('https://my-json-server.typicode.com/zachhall/WIN2020_AjaxPromises/posts', 
         {
-            "userID": 15,
-            "title": "test title",
-            "body": "this is a test body"
+            userID: 15,
+            title: "test title",
+            body: "this is a test body"
         },
         function(data){
             list.empty();
@@ -71,9 +71,9 @@ $('#posts10').click(()=>{
             method: 'PUT',
             url: 'https://my-json-server.typicode.com/zachhall/WIN2020_AjaxPromises/posts/10',
             data: {
-                "userID": 15,
-                "title": "test title replace",
-                "body": "this is a test body replace"},
+                userID: 15,
+                title: "test title replace",
+                body: "this is a test body replace"},
             complete: function(data){
                 list.empty();
                 let li = $('<li></li>');
@@ -89,7 +89,7 @@ $('#posts10').click(()=>{
             method: 'PATCH',
             url: 'https://my-json-server.typicode.com/zachhall/WIN2020_AjaxPromises/posts/10',
             data: {
-                "title": "test title update"},
+                title: "test title update"},
             complete: function(data){
                 list.empty();
                 let li = $('<li></li>');
@@ -144,9 +144,9 @@ $('#posts10').click(()=>{
 
  list.click( (e)=>{
     if(e.target && e.target.nodeName == "LI"){
-        $(e.target).children().show();
+            $(e.target).children().toggle();  
     };
-})
+});
 
 // function getAllUsers(){
 //     return new Promise(function(resolve, reject){
